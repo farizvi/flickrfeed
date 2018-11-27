@@ -1,0 +1,13 @@
+<div class="container mt-3">
+    <div class="row h-100 justify-content-center align-items-center">
+        <form class="form-inline" #form="ngForm" (ngSubmit)="searchImages()" novalidate>            
+            <input type="text" name="searchText" placeholder="Search tags" class="form-control ml-1" [(ngModel)]="searchString" />
+    
+            <button type="submit" class="btn btn-primary" style="margin-left:10px">Search</button>
+        </form>
+    </div>    
+    <div>&nbsp;</div>
+    <div clas="row">
+        <app-searchresults [searchResults]="resultItems"></app-searchresults>
+    </div>
+</div>

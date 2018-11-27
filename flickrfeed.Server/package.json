@@ -1,0 +1,30 @@
+{
+  "name": "flickrfeed.server",
+  "version": "1.0.0",
+  "description": "An API in NodeJS/Express for serving Flickr public feed",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "babel-node src/index.js --presets es2015,stage-2",
+    "test": "jest"
+  },
+  "author": "Fahad Amin Rizvi",
+  "license": "GPL",
+  "homepage": "https://github.com/farizvi/flickrfeed",
+  "dependencies": {
+    "@purest/providers": "^1.0.0",
+    "@request/client": "^0.1.0",
+    "@request/oauth": "^0.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.15.2",
+    "requestify": "^0.2.5",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "jest": "^19.0.2",
+    "regenerator-runtime": "^0.10.3"
+  }
+}
