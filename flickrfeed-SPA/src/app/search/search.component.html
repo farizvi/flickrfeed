@@ -1,11 +1,16 @@
 <div class="container mt-3">
     <div class="row h-100 justify-content-center align-items-center">
-        <form class="form-inline" #form="ngForm" (ngSubmit)="searchImages()" novalidate>            
-            <input type="text" name="searchText" placeholder="Search tags" class="form-control ml-1" [(ngModel)]="searchString" />
-    
+        <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="searchImages()" novalidate>            
+            <input type="text" id="searchText" name="searchText" required placeholder="Search tags" class="form-control ml-1" formControlName="searchText" />
+            
             <button type="submit" class="btn btn-primary" style="margin-left:10px">Search</button>
         </form>
     </div>    
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="invalid-feedback" *ngIf="searchForm.get('searchText').touched && searchForm.get('searchText').hasError('required')">
+            Please enter some text to search
+        </div>
+    </div>
     <div>&nbsp;</div>
     <div clas="row">
         <app-searchresults [searchResults]="resultItems"></app-searchresults>
